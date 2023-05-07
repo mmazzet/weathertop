@@ -10,7 +10,8 @@
   <div class="tile is-ancestor">
     <div class="tile is-parent">
       <article class="tile is-child box  has-background-dark">
-        <p class="title is-4 has-text-white">${station.name}</p>
+        <p class="title is-4 has-text-white mr-3">${station.name} <i class="fa-sharp fa-solid fa-location-pin fa-2xl px-1"  style="color: #6436c9;"></i></p>
+        <p class="content has-text-white">Lat: ${station.getLatitude()} <br>Lng: ${station.getLongitude()} </p>
       </article>
     </div>
     <div class="tile is-parent">

@@ -1,7 +1,17 @@
 <form class="box" action="/dashboard/addStation" method="POST">
-    <div class="field">
-        <label class="label">Station Name</label>
-        <input class="input" placeholder="Station Name"  type="text" name="name" required>
+    <div class="columns">
+        <div class="field column">
+            <label class="label">Station Name</label>
+            <input class="input" placeholder="Station Name" type="text" name="name" required>
+        </div>
+        <div class="field column">
+            <label class="label">Latitude</label>
+            <input class="input" placeholder="Latitude" type="float" name="latitude">
+        </div>
+        <div class="field column">
+            <label class="label">Longitude</label>
+            <input class="input" placeholder="Longitude" type="float" name="longitude">
+        </div>
     </div>
     <button class="button is-link is-info">Add Station</button>
 </form>

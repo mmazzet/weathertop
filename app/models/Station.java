@@ -26,6 +26,9 @@ public class Station extends Model
     public double windDirection;
     public int pressure;
 
+    public double latitude;
+    public double longitude;
+
     public Station(String name, int code, double windSpeed, int pressure)
     {
         this.name = name;
@@ -37,6 +40,19 @@ public class Station extends Model
     {
         this.name = name;
     }
+
+    public Station (double latitude, double longitude){
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
+
+    public double getLatitude(){
+        return latitude;
+    }
+    public double getLongitude(){
+        return longitude;
+    }
+
     public String lastWeatherCondition(){
         Reading lastReading = readings.get(readings.size()-1);
         int weatherCode = lastReading.code;

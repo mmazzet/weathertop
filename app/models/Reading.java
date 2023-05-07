@@ -15,6 +15,8 @@ public class Reading extends Model {
     public double windDirection;
     public int pressure;
 
+
+
     public Reading(String name, int code, double temperature, double windSpeed, int pressure) {
         this.name = name;
         this.code = code;
