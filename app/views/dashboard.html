@@ -1,0 +1,20 @@
+#{extends 'main.html' /}
+#{set title:'Dashboard' /}
+
+#{menu id:"dashboard"/}
+
+#{list items:stations, as:'station'}
+<div class="content box mt-5">
+  <h1 class="title">
+    ${station.name}
+  </h1>
+  <p>
+    <a href="/stations/${station.id}" class="icon has-background-grey-light is-large 48px ">
+      <i class="fa-solid fa-folder-open " title="Open Station View" style="color: #656566;"></i>
+    </a>
+
+  </p>
+</div>
+#{/list}
+
+#{addstation /}

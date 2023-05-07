@@ -1,0 +1,44 @@
+#{extends 'main.html' /}
+#{set title:'Station' /}
+
+#{menu id:"dashboard"/}
+
+<div class="content box mt-5">
+  <h1 class="title">
+    ${station.name}
+  </h1>
+  <div class="tile is-ancestor">
+    <div class="tile is-parent">
+      <article class="tile is-child box  has-background-dark">
+        <p class="title is-4 has-text-white">${station.name}</p>
+      </article>
+    </div>
+    <div class="tile is-parent">
+      <article class="tile is-child box  has-background-dark">
+        <p class="title is-4 has-text-white">Weather</p>
+        <p class="content has-text-white">${station.lastWeatherCondition()}</p>
+      </article>
+    </div>
+    <div class="tile is-parent">
+      <article class="tile is-child box  has-background-dark">
+        <p class="title is-4 has-text-white">Temperature</p>
+        <p class="content has-text-white"> ${station.lastTempF()} F<br>${station.lastTempC()} C</p>
+      </article>
+    </div>
+    <div class="tile is-parent">
+      <article class="tile is-child box  has-background-dark">
+        <p class="title is-4 has-text-white">Wind</p>
+        <p class="content has-text-white">${station.lastWindSpeedBeaufort()} bft<br>${station.lastWindDirection()}
+        <br>Feels like ${station.lastWindChill()} </p>
+      </article>
+    </div>
+    <div class="tile is-parent">
+      <article class="tile is-child box  has-background-dark">
+        <p class="title is-4 has-text-white">Pressure</p>
+        <p class="content has-text-white">${station.lastPressure()} hpa</p>
+      </article>
+    </div>
+  </div>
+  #{listreadings station:station /}
+  #{addreading station:station /}
+</div>
