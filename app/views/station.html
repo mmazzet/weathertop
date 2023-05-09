@@ -17,26 +17,48 @@
     <div class="tile is-parent">
       <article class="tile is-child box  has-background-dark">
         <p class="title is-4 has-text-white">Weather</p>
+        #{if station.readings.size() > 0}
         <p class="content has-text-white">${station.lastWeatherCondition()}</p>
+        #{/if}
+        #{else}
+        <p class="content has-text-danger">Add Weather Code Reading below</p>
+        #{/else}
       </article>
     </div>
     <div class="tile is-parent">
       <article class="tile is-child box  has-background-dark">
         <p class="title is-4 has-text-white">Temperature</p>
-        <p class="content has-text-white"> ${station.lastTempF()} F<br>${station.lastTempC()} C</p>
+        #{if station.readings.size() > 0}
+        <p class="content has-text-white"> ${station.lastTempF()} F<br>${station.lastTempC()} C<br>
+        Max: ${station.getMaxTemperature()}
+          #{/if}
+          #{else}
+         <p class="content has-text-danger">Add Temperature Reading below</p>
+          #{/else}
+        </p>
       </article>
     </div>
     <div class="tile is-parent">
       <article class="tile is-child box  has-background-dark">
         <p class="title is-4 has-text-white">Wind</p>
+        #{if station.readings.size() > 0}
         <p class="content has-text-white">${station.lastWindSpeedBeaufort()} bft<br>${station.lastWindDirection()}
         <br>Feels like ${station.lastWindChill()} </p>
+        #{/if}
+        #{else}
+        <p class="content has-text-danger">Add Wind Speed Reading below</p>
+        #{/else}
       </article>
     </div>
     <div class="tile is-parent">
       <article class="tile is-child box  has-background-dark">
         <p class="title is-4 has-text-white">Pressure</p>
+        #{if station.readings.size() > 0}
         <p class="content has-text-white">${station.lastPressure()} hpa</p>
+        #{/if}
+        #{else}
+        <p class="content has-text-danger"> Add Pressure Reading below</p>
+        #{/else}
       </article>
     </div>
   </div>

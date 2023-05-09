@@ -25,6 +25,7 @@ public class Station extends Model
     public double windSpeed;
     public double windDirection;
     public int pressure;
+    public double temperature;
 
     public double latitude;
     public double longitude;
@@ -63,9 +64,21 @@ public class Station extends Model
         Reading lastReading = readings.get(readings.size()-1);
         return lastReading.temperature;
     }
+
+
     public double lastTempF(){
         double lastTempCelsius = lastTempC();
         return Conversions.convertToFahrenheit(lastTempCelsius);
+    }
+
+    public double getMaxTemperature() {
+        double maxTemperature = -89.2;
+        for (Reading r : readings) {
+            if (r.temperature > maxTemperature) {
+                maxTemperature = r.temperature;
+            }
+        }
+        return maxTemperature;
     }
     public int lastWindSpeedBeaufort() {
         Reading lastReading = readings.get(readings.size() - 1);
@@ -93,7 +106,5 @@ public class Station extends Model
         double windChill = Conversions.convertToWindChill(lastTempCelsius, lastWindSpeed);
         return Math.round(windChill*10)/10.0;
     }
-
-
 
 }
