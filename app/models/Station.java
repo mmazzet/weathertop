@@ -54,6 +54,8 @@ public class Station extends Model
         return longitude;
     }
 
+
+
     public String lastWeatherCondition(){
         Reading lastReading = readings.get(readings.size()-1);
         int weatherCode = lastReading.code;

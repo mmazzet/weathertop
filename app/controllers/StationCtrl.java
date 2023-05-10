@@ -7,6 +7,7 @@ import models.Reading;
 import play.Logger;
 import play.mvc.Controller;
 
+
 public class StationCtrl extends Controller
 {
   public static void index(Long id)
@@ -23,6 +24,16 @@ public class StationCtrl extends Controller
     station.readings.add(reading);
     station.save();
     redirect ("/stations/" + id);
+  }
+  public static void deleteReading (Long id, Long readingid)
+  {
+    Station station = Station.findById(id);
+    Reading reading = Reading.findById(readingid);
+    Logger.info ("Removing " + reading.code);
+    station.readings.remove(reading);
+    station.save();
+    reading.delete();
+    render("station.html", station);
   }
 }
 
