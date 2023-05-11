@@ -30,7 +30,7 @@
         <p class="title is-4 has-text-white">Temperature</p>
         #{if station.readings.size() > 0}
         <p class="content has-text-white"> ${station.lastTempF()} F<br>${station.lastTempC()} C<br>
-        Max: ${station.getMaxTemperature()}
+        Min: ${minTempReading.temperature} C <br> Max: ${maxTempReading.temperature} C
           #{/if}
           #{else}
          <p class="content has-text-danger">Add Temperature Reading below</p>
@@ -43,7 +43,7 @@
         <p class="title is-4 has-text-white">Wind</p>
         #{if station.readings.size() > 0}
         <p class="content has-text-white">${station.lastWindSpeedBeaufort()} bft<br>${station.lastWindDirection()}
-        <br>Feels like ${station.lastWindChill()} </p>
+        <br>Feels like ${station.lastWindChill()} <br> Min: ${minWindSReading.windSpeed} Km/h <br> Max: ${maxWindSReading.windSpeed} Km/h </p>
         #{/if}
         #{else}
         <p class="content has-text-danger">Add Wind Speed Reading below</p>
@@ -54,7 +54,8 @@
       <article class="tile is-child box  has-background-dark">
         <p class="title is-4 has-text-white">Pressure</p>
         #{if station.readings.size() > 0}
-        <p class="content has-text-white">${station.lastPressure()} hpa</p>
+        <p class="content has-text-white">${station.lastPressure()} hpa<br>
+        Min: ${minPressReading.pressure} hpa<br>Max: ${maxPressReading.pressure} hpa</p>
         #{/if}
         #{else}
         <p class="content has-text-danger"> Add Pressure Reading below</p>

@@ -73,15 +73,7 @@ public class Station extends Model
         return Conversions.convertToFahrenheit(lastTempCelsius);
     }
 
-    public double getMaxTemperature() {
-        double maxTemperature = -89.2;
-        for (Reading r : readings) {
-            if (r.temperature > maxTemperature) {
-                maxTemperature = r.temperature;
-            }
-        }
-        return maxTemperature;
-    }
+
     public int lastWindSpeedBeaufort() {
         Reading lastReading = readings.get(readings.size() - 1);
         double windSpeedKm = lastReading.windSpeed;
