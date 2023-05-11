@@ -38,10 +38,17 @@ public class StationCtrl extends Controller
     Station station = Station.findById(id);
     Reading reading = Reading.findById(readingid);
     Logger.info ("Removing " + reading.code);
+    Reading minTempReading = Analytics.getMinTemperature(station.readings);
+    Reading maxTempReading = Analytics.getMaxTemperature(station.readings);
+    Reading minPressReading = Analytics.getMinPressure(station.readings);
+    Reading maxPressReading = Analytics.getMaxPressure(station.readings);
+    Reading minWindSReading = Analytics.getMinWindSpeed(station.readings);
+    Reading maxWindSReading = Analytics.getMaxWindSpeed(station.readings);
     station.readings.remove(reading);
     station.save();
     reading.delete();
-    render("station.html", station);
+    render("station.html", station, minTempReading, maxTempReading, minPressReading, maxPressReading,
+        minWindSReading, maxWindSReading);
   }
 }
 

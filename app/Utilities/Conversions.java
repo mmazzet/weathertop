@@ -116,7 +116,7 @@ public class Conversions {
     }
     else {
       // value not in range 0-360 degrees
-      return "enter value from 0 to 360";
+      return "Enter value from 0 to 360";
     }
   }
 
