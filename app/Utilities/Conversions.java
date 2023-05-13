@@ -49,11 +49,9 @@ public class Conversions {
   }
   public static String convertToWCondition(int code) {
     String weatherString = "";
-    String icon = "";
       switch (code) {
         case 100:
           weatherString = "Clear";
-          icon = "fa-solid fa-sun";
           break;
         case 200:
           weatherString = "Partial Clouds";

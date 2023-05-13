@@ -3,32 +3,42 @@
     <div class="field column">
       <label class="label">Code</label>
       <div class="control">
-        <input class="input" placeholder="00" type="number" name="code" required>
+        <input class="input" placeholder="00"  name="code" required list="defaultCodes" />
+        <datalist id="defaultCodes">
+          <option value="100"></option>
+          <option value="200"></option>
+          <option value="300"></option>
+          <option value="400"></option>
+          <option value="500"></option>
+          <option value="600"></option>
+          <option value="700"></option>
+          <option value="800"></option>
+        </datalist>
       </div>
     </div>
     <div class="field column">
       <label class="label">Temperature</label>
       <div class="control">
-        <input class="input" placeholder="00.0C" type="number" name="temperature" required>
+        <input class="input" placeholder="00.0C" type="number" min="-89.2" max="56.7" step="any" name="temperature" required>
       </div>
     </div>
     <div class="field column">
       <label class="label">Wind Speed</label>
       <div class="control">
-        <input class="input" placeholder="00.00kMh" type="number" name="windSpeed" required>
+        <input class="input" placeholder="00.00kMh" type="number" min="0" max="408" name="windSpeed" required>
       </div>
     </div>
 
     <div class="field column">
       <label class="label">Wind Direction</label>
       <div class="control">
-        <input class="input" placeholder="000deg" type="number" name="windDirection" required>
+        <input class="input" placeholder="000deg" type="number" name="windDirection" min="0" max="360" step="any" required>
       </div>
     </div>
     <div class="field column">
       <label class="label">Pressure</label>
       <div class="control">
-        <input class="input" placeholder="000hPa" type="number" name="pressure" required>
+        <input class="input" placeholder="000hPa" type="number" name="pressure" min="946.5" max="1084.8" step="any" required>
       </div>
     </div>
 

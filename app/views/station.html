@@ -59,8 +59,8 @@
         <p class="title is-4 has-text-white">Pressure
           <i class="fa-solid fa-gauge fa-2xl px-4" style="color: #df6a1c;"></i></p>
         #{if station.readings.size() > 0}
-        <p class="content has-text-white">${station.lastPressure()} hpa<br>
-        Min: ${minPressReading.pressure} hpa<br>Max: ${maxPressReading.pressure} hpa</p>
+        <p class="content has-text-white">${station.lastPressure()} hPa<br>
+        Min: ${minPressReading.pressure} hPa<br>Max: ${maxPressReading.pressure} hPa</p>
         #{/if}
         #{else}
         <p class="content has-text-danger"> Add Pressure Reading below</p>
