@@ -37,24 +37,12 @@ public class Station extends Model
         this.windSpeed = windSpeed;
         this.pressure = pressure;
     }
-    public Station(String name)
+    public Station(String name,  double latitude, double longitude)
     {
         this.name = name;
-    }
-
-    public Station (double latitude, double longitude){
         this.latitude = latitude;
         this.longitude = longitude;
     }
-
-    public double getLatitude(){
-        return latitude;
-    }
-    public double getLongitude(){
-        return longitude;
-    }
-
-
 
     public String lastWeatherCondition(){
         Reading lastReading = readings.get(readings.size()-1);

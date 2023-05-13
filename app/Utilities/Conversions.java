@@ -1,6 +1,7 @@
 package Utilities;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import models.Reading;
@@ -48,9 +49,11 @@ public class Conversions {
   }
   public static String convertToWCondition(int code) {
     String weatherString = "";
+    String icon = "";
       switch (code) {
         case 100:
           weatherString = "Clear";
+          icon = "fa-solid fa-sun";
           break;
         case 200:
           weatherString = "Partial Clouds";
@@ -77,7 +80,6 @@ public class Conversions {
       }
     return weatherString;
   }
-
   public static String convertToWDirection(double windDirection) {
     if (windDirection >= 348.75 && windDirection <= 360) {
       return "North";
@@ -119,12 +121,8 @@ public class Conversions {
       return "Enter value from 0 to 360";
     }
   }
-
   public static double convertToWindChill(double temperature, double windSpeed){
     double windChill = 13.12 + 0.6215*temperature - 11.37 *(Math.pow(windSpeed,0.16)) + 0.3965*temperature*(Math.pow(windSpeed,0.16));
     return windChill;
   }
-
-
-
 }

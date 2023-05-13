@@ -11,8 +11,7 @@ import Utilities.Analytics;
 
 public class StationCtrl extends Controller
 {
-  public static void index(Long id)
-  {
+  public static void index(Long id) {
     Station station = Station.findById(id);
     Logger.info ("Station id = " + id);
     Reading minTempReading = Analytics.getMinTemperature(station.readings);
@@ -24,17 +23,15 @@ public class StationCtrl extends Controller
     render("station.html", station, minTempReading, maxTempReading, minPressReading, maxPressReading,
         minWindSReading, maxWindSReading);
   }
-  public static void addReading(Long id, int code, double temperature, double windSpeed, double windDirection, int pressure)
-
-  {
+  public static void addReading(Long id, int code, double temperature, double windSpeed,
+                                double windDirection, int pressure) {
     Reading reading = new Reading(code, temperature, windSpeed, windDirection, pressure);
     Station station = Station.findById(id);
     station.readings.add(reading);
     station.save();
     redirect ("/stations/" + id);
   }
-  public static void deleteReading (Long id, Long readingid)
-  {
+  public static void deleteReading (Long id, Long readingid) {
     Station station = Station.findById(id);
     Reading reading = Reading.findById(readingid);
     Logger.info ("Removing " + reading.code);
@@ -50,5 +47,6 @@ public class StationCtrl extends Controller
     render("station.html", station, minTempReading, maxTempReading, minPressReading, maxPressReading,
         minWindSReading, maxWindSReading);
   }
+
 }
 
