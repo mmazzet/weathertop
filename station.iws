@@ -7,8 +7,7 @@
     <list default="true" id="8b7c012d-60ef-4dbc-b666-92d60588a2e8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/Template_1000$_run_closure1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Template_1000.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Template_1001$_run_closure1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Template_1001.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template_1001$_run_closure1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1001$_run_closure1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Template_1002$_run_closure1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Template_1002.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Template_1003$_run_closure1.class" beforeDir="false" />
@@ -31,6 +30,9 @@
       <change beforePath="$PROJECT_DIR$/Template_1011.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Template_1012$_run_closure1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Template_1012.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/start.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/start.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/station.iws" beforeDir="false" afterPath="$PROJECT_DIR$/station.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_start.html" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_start.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +143,7 @@
       <workItem from="1684062312706" duration="304000" />
       <workItem from="1684063420466" duration="6058000" />
       <workItem from="1684096617648" duration="242000" />
-      <workItem from="1684096976103" duration="361000" />
+      <workItem from="1684096976103" duration="1718000" />
     </task>
     <servers />
   </component>
