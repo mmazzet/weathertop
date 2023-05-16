@@ -10,6 +10,8 @@ import models.Station;
 
 import play.db.jpa.Model;
 
+import javax.swing.*;
+
 public class Conversions {
   public static double convertToFahrenheit(double temperature){
     double fahrenheit = temperature * 9 / 5 + 32;
@@ -78,6 +80,8 @@ public class Conversions {
       }
     return weatherString;
   }
+
+
   public static String convertToWDirection(double windDirection) {
     if (windDirection >= 348.75 && windDirection <= 360) {
       return "North";

@@ -15,8 +15,7 @@ import static controllers.StationCtrl.addReading;
 
 
 @Entity
-public class Station extends Model
-{
+public class Station extends Model {
     public String name;
     public int code;
 
@@ -29,40 +28,40 @@ public class Station extends Model
     public double latitude;
     public double longitude;
 
-    public Station(String name, int code, double windSpeed, int pressure)
-    {
+    public Station(String name, int code, double windSpeed, int pressure) {
         this.name = name;
         this.code = code;
         this.windSpeed = windSpeed;
         this.pressure = pressure;
     }
-    public Station(String name,  double latitude, double longitude)
-    {
+
+    public Station(String name, double latitude, double longitude) {
         this.name = name;
         this.latitude = latitude;
         this.longitude = longitude;
     }
+
     public double getLatitude() {
         return this.latitude;
     }
 
-    public String lastWeatherCondition(){
-        Reading lastReading = readings.get(readings.size()-1);
+    public String lastWeatherCondition() {
+        Reading lastReading = readings.get(readings.size() - 1);
         int weatherCode = lastReading.code;
         String weatherCondition = Conversions.convertToWCondition(weatherCode);
         return weatherCondition;
     }
-    public double lastTempC(){
-        Reading lastReading = readings.get(readings.size()-1);
+
+    public double lastTempC() {
+        Reading lastReading = readings.get(readings.size() - 1);
         return lastReading.temperature;
     }
 
 
-    public double lastTempF(){
+    public double lastTempF() {
         double lastTempCelsius = lastTempC();
-        return Conversions.convertToFahrenheit(lastTempCelsius);
+        return Math.round(Conversions.convertToFahrenheit(lastTempCelsius)*10 / 10);
     }
-
 
     public int lastWindSpeedBeaufort() {
         Reading lastReading = readings.get(readings.size() - 1);
@@ -71,24 +70,24 @@ public class Station extends Model
         return windSpeedBeaufort;
     }
 
-    public String lastWindDirection(){
-        Reading lastReading = readings.get(readings.size()-1);
+    public String lastWindDirection() {
+        Reading lastReading = readings.get(readings.size() - 1);
         double degreeRange = lastReading.windDirection;
         String compassDirection = Conversions.convertToWDirection(degreeRange);
         return compassDirection;
     }
 
-    public int lastPressure(){
-        Reading lastReading = readings.get(readings.size()-1);
+    public int lastPressure() {
+        Reading lastReading = readings.get(readings.size() - 1);
         return lastReading.pressure;
     }
 
-    public double lastWindChill(){
+    public double lastWindChill() {
         Reading lastReading = readings.get(readings.size() - 1);
         double lastTempCelsius = lastReading.temperature;
         double lastWindSpeed = lastReading.windSpeed;
         double windChill = Conversions.convertToWindChill(lastTempCelsius, lastWindSpeed);
-        return Math.round(windChill*10)/10.0;
+        return Math.round(windChill * 10) / 10.0;
     }
 
 }

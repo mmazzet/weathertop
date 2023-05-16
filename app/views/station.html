@@ -18,12 +18,39 @@
     <div class="tile is-parent">
       <article class="tile is-child box  has-background-dark">
         <p class="title is-4 has-text-white">Weather</p>
-        #{if station.readings.size() > 0}
-        <p class="content has-text-white">${station.lastWeatherCondition()}</p>
-        #{/if}
-        #{else}
-        <p class="content has-text-danger">Add Weather Code Reading below</p>
-        #{/else}
+          #{if station.readings.size() > 0}
+          <div class="content has-text-white">${station.lastWeatherCondition()}</div>
+
+          #{if station.lastWeatherCondition() === 'Clear'}
+          <i class="fa-solid fa-sun" style="color: #db2928;"></i>
+          #{/if}
+          #{elseif station.lastWeatherCondition() === 'Partial Clouds'}
+          <i class="fa-solid fa-cloud-sun" style="color: #db2928;"></i>
+          #{/elseif}
+          #{elseif station.lastWeatherCondition() === 'Cloudy'}
+          <i class="fa-solid fa-cloud" style="color: #db2928;"></i>
+          #{/elseif}
+          #{elseif station.lastWeatherCondition() === 'Light Showers'}
+          <i class="fa-solid fa-cloud-sun-rain" style="color: #db2928;"></i>
+          #{/elseif}
+          #{elseif station.lastWeatherCondition() === 'Heavy Showers'}
+          <i class="fa-solid fa-cloud-showers-heavy" style="color: #db2928;"></i>
+          #{/elseif}
+          #{elseif station.lastWeatherCondition() === 'Rain'}
+          <i class="fa-solid fa-cloud-rain" style="color: #db2928;"></i>
+          #{/elseif}
+          #{elseif station.lastWeatherCondition() === 'Snow'}
+          <i class="fas fa-snowflake" style="color: #db2928;"></i>
+          #{/elseif}
+          #{elseif station.lastWeatherCondition() === 'Thunder'}
+          <i class="fas fa-cloud-bolt" style="color: #db2928;"></i>
+          #{/elseif}
+          #{/if}
+          #{else}
+          <p class="content has-text-danger">Add Weather Code Reading below</p>
+          <i></i>
+          #{/else}
+
       </article>
     </div>
     <div class="tile is-parent">
@@ -37,7 +64,7 @@
           #{else}
          <p class="content has-text-danger">Add Temperature Reading below</p>
           #{/else}
-        </p>
+
       </article>
     </div>
     <div class="tile is-parent">
@@ -65,7 +92,7 @@
         #{else}
         <p class="content has-text-danger"> Add Pressure Reading below</p>
         #{/else}
-        <span class="icon is-large">
+        <span class="icon is-large"></span>
       </article>
     </div>
   </div>
