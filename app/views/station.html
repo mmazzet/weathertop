@@ -17,35 +17,37 @@
     </div>
     <div class="tile is-parent">
       <article class="tile is-child box  has-background-dark">
-        <p class="title is-4 has-text-white">Weather</p>
+        <div class="title is-4 has-text-white">Weather
           #{if station.readings.size() > 0}
-          <div class="content has-text-white">${station.lastWeatherCondition()}</div>
 
-          #{if station.lastWeatherCondition() === 'Clear'}
+
+          #{if station.lastWeatherCondition() == 'Clear'}
           <i class="fa-solid fa-sun fa-2xl px-1" style="color: #db2928;"></i>
           #{/if}
-          #{elseif station.lastWeatherCondition() === 'Partial Clouds'}
+          #{elseif station.lastWeatherCondition() == 'Partial Clouds'}
           <i class="fa-solid fa-cloud-sun fa-2xl px-1" style="color: #db2928;"></i>
           #{/elseif}
-          #{elseif station.lastWeatherCondition() === 'Cloudy'}
+          #{elseif station.lastWeatherCondition() == 'Cloudy'}
           <i class="fa-solid fa-cloud fa-2xl px-1" style="color: #db2928;"></i>
           #{/elseif}
-          #{elseif station.lastWeatherCondition() === 'Light Showers'}
+          #{elseif station.lastWeatherCondition() == 'Light Showers'}
           <i class="fa-solid fa-cloud-sun-rain fa-2xl px-1" style="color: #db2928;"></i>
           #{/elseif}
-          #{elseif station.lastWeatherCondition() === 'Heavy Showers'}
+          #{elseif station.lastWeatherCondition() == 'Heavy Showers'}
           <i class="fa-solid fa-cloud-showers-heavy fa-2xl px-1" style="color: #db2928;"></i>
           #{/elseif}
-          #{elseif station.lastWeatherCondition() === 'Rain'}
+          #{elseif station.lastWeatherCondition() == 'Rain'}
           <i class="fa-solid fa-cloud-rain fa-2xl px-1" style="color: #db2928;"></i>
           #{/elseif}
-          #{elseif station.lastWeatherCondition() === 'Snow'}
+          #{elseif station.lastWeatherCondition() == 'Snow'}
           <i class="fas fa-snowflake fa-2xl px-1" style="color: #db2928;"></i>
           #{/elseif}
-          #{elseif station.lastWeatherCondition() === 'Thunder'}
+          #{elseif station.lastWeatherCondition() == 'Thunder'}
           <i class="fas fa-cloud-bolt fa-2xl px-1" style="color: #db2928;"></i>
           #{/elseif}
           #{/if}
+        </div>
+        <div class="content has-text-white">${station.lastWeatherCondition()}</div>
           #{else}
           <p class="content has-text-danger">Add Weather Code Reading below</p>
           <i></i>
