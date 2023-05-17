@@ -1,5 +1,7 @@
 package models;
 
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,6 +45,9 @@ public class Station extends Model {
 
     public double getLatitude() {
         return this.latitude;
+    }
+    public double getLongitude() {
+        return this.longitude;
     }
 
     public String lastWeatherCondition() {
@@ -89,5 +94,11 @@ public class Station extends Model {
         double windChill = Conversions.convertToWindChill(lastTempCelsius, lastWindSpeed);
         return Math.round(windChill * 10) / 10.0;
     }
+
+//    public String addDate() {
+//        Timestamp ts = new Timestamp(System.currentTimeMillis());
+//        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//        return formatter.format(ts);
+//    }
 
 }

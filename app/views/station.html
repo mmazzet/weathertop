@@ -22,28 +22,28 @@
           <div class="content has-text-white">${station.lastWeatherCondition()}</div>
 
           #{if station.lastWeatherCondition() === 'Clear'}
-          <i class="fa-solid fa-sun" style="color: #db2928;"></i>
+          <i class="fa-solid fa-sun fa-2xl px-1" style="color: #db2928;"></i>
           #{/if}
           #{elseif station.lastWeatherCondition() === 'Partial Clouds'}
-          <i class="fa-solid fa-cloud-sun" style="color: #db2928;"></i>
+          <i class="fa-solid fa-cloud-sun fa-2xl px-1" style="color: #db2928;"></i>
           #{/elseif}
           #{elseif station.lastWeatherCondition() === 'Cloudy'}
-          <i class="fa-solid fa-cloud" style="color: #db2928;"></i>
+          <i class="fa-solid fa-cloud fa-2xl px-1" style="color: #db2928;"></i>
           #{/elseif}
           #{elseif station.lastWeatherCondition() === 'Light Showers'}
-          <i class="fa-solid fa-cloud-sun-rain" style="color: #db2928;"></i>
+          <i class="fa-solid fa-cloud-sun-rain fa-2xl px-1" style="color: #db2928;"></i>
           #{/elseif}
           #{elseif station.lastWeatherCondition() === 'Heavy Showers'}
-          <i class="fa-solid fa-cloud-showers-heavy" style="color: #db2928;"></i>
+          <i class="fa-solid fa-cloud-showers-heavy fa-2xl px-1" style="color: #db2928;"></i>
           #{/elseif}
           #{elseif station.lastWeatherCondition() === 'Rain'}
-          <i class="fa-solid fa-cloud-rain" style="color: #db2928;"></i>
+          <i class="fa-solid fa-cloud-rain fa-2xl px-1" style="color: #db2928;"></i>
           #{/elseif}
           #{elseif station.lastWeatherCondition() === 'Snow'}
-          <i class="fas fa-snowflake" style="color: #db2928;"></i>
+          <i class="fas fa-snowflake fa-2xl px-1" style="color: #db2928;"></i>
           #{/elseif}
           #{elseif station.lastWeatherCondition() === 'Thunder'}
-          <i class="fas fa-cloud-bolt" style="color: #db2928;"></i>
+          <i class="fas fa-cloud-bolt fa-2xl px-1" style="color: #db2928;"></i>
           #{/elseif}
           #{/if}
           #{else}
