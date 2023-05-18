@@ -8,9 +8,14 @@ import play.Logger;
 import play.mvc.Controller;
 import Utilities.Analytics;
 
-
-public class StationCtrl extends Controller
-{
+/**
+ * Manages station activities for adding and deleting readings and min max readings
+ */
+public class StationCtrl extends Controller {
+  /**
+   * Shows the station details and readings.
+   * @param id id of the station
+   */
   public static void index(Long id) {
     Station station = Station.findById(id);
     Logger.info ("Station id = " + id);
@@ -23,6 +28,16 @@ public class StationCtrl extends Controller
     render("station.html", station, minTempReading, maxTempReading, minPressReading, maxPressReading,
         minWindSReading, maxWindSReading);
   }
+  /**
+   * Adds a new reading to the station.
+   *
+   * @param id           id of the station
+   * @param code         code of the reading
+   * @param temperature  temperature of the reading
+   * @param windSpeed    wind speed of the reading
+   * @param windDirection wind direction of the reading
+   * @param pressure     pressure of the reading
+   */
   public static void addReading(Long id, int code, double temperature, double windSpeed,
                                 double windDirection, int pressure) {
     Reading reading = new Reading(code, temperature, windSpeed, windDirection, pressure);
@@ -31,6 +46,11 @@ public class StationCtrl extends Controller
     station.save();
     redirect ("/stations/" + id);
   }
+  /**
+   * Deletes a reading from the station.
+   * @param id        id of the station
+   * @param readingid id of the reading to delete
+   */
   public static void deleteReading (Long id, Long readingid) {
     Station station = Station.findById(id);
     Reading reading = Reading.findById(readingid);

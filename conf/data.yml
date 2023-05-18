@@ -26,16 +26,6 @@ Reading(r4):
   windSpeed: 3.5
   windDirection: 120
   pressure: 999
-Reading(r5):
-  code: 300
-  temperature: 9.5
-  windSpeed: 19.5
-  pressure: 1052
-Reading(r7):
-  code: 500
-  temperature: 20.3
-  windSpeed: 67.1
-  pressure: 325
 
 Station(s1):
   name: Tramore

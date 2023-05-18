@@ -1,7 +1,6 @@
 package Utilities;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import models.Reading;
@@ -10,14 +9,27 @@ import models.Station;
 
 import play.db.jpa.Model;
 
-import javax.swing.*;
+/**
+ * Conversion class used for a range of conversion methods for weather data.
+ */
 
 public class Conversions {
+
+  /**
+   * Converts temperature in Celsius to Fahrenheit
+   * @param temperature temperature in Celsius
+   * @return temperature in Fahrenheit
+   */
   public static double convertToFahrenheit(double temperature){
     double fahrenheit = temperature * 9 / 5 + 32;
     return fahrenheit;
   }
 
+  /**
+   * Converts WindSpeed to Beaufort scale
+   * @param windSpeed the wind speed in km/h
+   * @return the corresponding Beaufort scale value
+   */
   public static int convertToBeaufort(double windSpeed) {
     if (windSpeed <= 1.0) {
       return 0;
@@ -45,10 +57,15 @@ public class Conversions {
       return 11;
     }
     else {
-      // speed > than 117
+      // speed > than 117.99
       return -1;
     }
   }
+  /**
+   * Converts a Weather code to weather condition
+   * @param code weather code as per brief
+   * @return weatherString the matching weather condition as per brief
+   */
   public static String convertToWCondition(int code) {
     String weatherString = "";
       switch (code) {
@@ -81,7 +98,11 @@ public class Conversions {
     return weatherString;
   }
 
-
+  /**
+   * Converts Wind direction degree ranges to compass direction
+   * @param windDirection the wind direction in degrees
+   * @return the corresponding compass direction
+   */
   public static String convertToWDirection(double windDirection) {
     if (windDirection >= 348.75 && windDirection <= 360) {
       return "North";
@@ -123,8 +144,15 @@ public class Conversions {
       return "Enter value from 0 to 360";
     }
   }
+  /**
+   * Returns  the wind chill factor according to temperature and wind speed.
+   * @param temperature the temperature in Celsius
+   * @param windSpeed the wind speed in km/h
+   * @return windChill the wind chill temperature in Celsius
+   */
   public static double convertToWindChill(double temperature, double windSpeed){
-    double windChill = 13.12 + 0.6215*temperature - 11.37 *(Math.pow(windSpeed,0.16)) + 0.3965*temperature*(Math.pow(windSpeed,0.16));
+    double windChill = 13.12 + 0.6215*temperature - 11.37 *(Math.pow(windSpeed,0.16)) +
+                        0.3965*temperature*(Math.pow(windSpeed,0.16));
     return windChill;
   }
 }

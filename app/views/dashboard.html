@@ -3,6 +3,7 @@
 
 #{menu id:"dashboard"/}
 
+
 #{list items:stations, as:'station'}
 <div class="content box mt-5">
   <h1 class="title">
@@ -15,5 +16,12 @@
     <i class="fas fa-trash" title="Delete Station"></i>
   </a>
 </div>
+
 #{/list}
 #{addstation /}
+
+#{if flash.error}
+<div class="notification is-danger">
+  ${flash.error}
+</div>
+#{/if}
