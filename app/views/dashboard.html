@@ -2,9 +2,8 @@
 #{set title:'Dashboard' /}
 
 #{menu id:"dashboard"/}
-
-
 #{list items:stations, as:'station'}
+
 <div class="content box mt-5">
   <h1 class="title">
     ${station.name}
@@ -16,7 +15,6 @@
     <i class="fas fa-trash" title="Delete Station"></i>
   </a>
 </div>
-
 #{/list}
 #{addstation /}
 

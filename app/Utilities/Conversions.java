@@ -17,16 +17,18 @@ public class Conversions {
 
   /**
    * Converts temperature in Celsius to Fahrenheit
+   *
    * @param temperature temperature in Celsius
    * @return temperature in Fahrenheit
    */
-  public static double convertToFahrenheit(double temperature){
+  public static double convertToFahrenheit(double temperature) {
     double fahrenheit = temperature * 9 / 5 + 32;
     return fahrenheit;
   }
 
   /**
    * Converts WindSpeed to Beaufort scale
+   *
    * @param windSpeed the wind speed in km/h
    * @return the corresponding Beaufort scale value
    */
@@ -55,51 +57,54 @@ public class Conversions {
       return 10;
     } else if (windSpeed >= 103.0 && windSpeed <= 117.99) {
       return 11;
-    }
-    else {
+    } else {
       // speed > than 117.99
       return -1;
     }
   }
+
   /**
    * Converts a Weather code to weather condition
+   *
    * @param code weather code as per brief
    * @return weatherString the matching weather condition as per brief
    */
   public static String convertToWCondition(int code) {
     String weatherString = "";
-      switch (code) {
-        case 100:
-          weatherString = "Clear";
-          break;
-        case 200:
-          weatherString = "Partial Clouds";
-          break;
-        case 300:
-          weatherString = "Cloudy";
-          break;
-        case 400:
-          weatherString = "Light Showers";
-          break;
-        case 500:
-          weatherString = "Heavy Showers";
-          break;
-        case 600:
-          weatherString = "Rain";
-          break;
-        case 700:
-          weatherString = "Snow";
-          break;
-        case 800:
-          weatherString = "Thunder";
-          break;
-        default: weatherString = "Not available";
-      }
+    switch (code) {
+      case 100:
+        weatherString = "Clear";
+        break;
+      case 200:
+        weatherString = "Partial Clouds";
+        break;
+      case 300:
+        weatherString = "Cloudy";
+        break;
+      case 400:
+        weatherString = "Light Showers";
+        break;
+      case 500:
+        weatherString = "Heavy Showers";
+        break;
+      case 600:
+        weatherString = "Rain";
+        break;
+      case 700:
+        weatherString = "Snow";
+        break;
+      case 800:
+        weatherString = "Thunder";
+        break;
+      default:
+        weatherString = "Not available";
+    }
     return weatherString;
   }
 
   /**
    * Converts Wind direction degree ranges to compass direction
+   *
    * @param windDirection the wind direction in degrees
    * @return the corresponding compass direction
    */
@@ -138,21 +143,22 @@ public class Conversions {
       return "NW";
     } else if (windDirection > 326.25 && windDirection <= 348.75) {
       return "NNW";
-    }
-    else {
+    } else {
       // value not in range 0-360 degrees
       return "Enter value from 0 to 360";
     }
   }
+
   /**
    * Returns  the wind chill factor according to temperature and wind speed.
+   *
    * @param temperature the temperature in Celsius
-   * @param windSpeed the wind speed in km/h
+   * @param windSpeed   the wind speed in km/h
    * @return windChill the wind chill temperature in Celsius
    */
-  public static double convertToWindChill(double temperature, double windSpeed){
-    double windChill = 13.12 + 0.6215*temperature - 11.37 *(Math.pow(windSpeed,0.16)) +
-                        0.3965*temperature*(Math.pow(windSpeed,0.16));
+  public static double convertToWindChill(double temperature, double windSpeed) {
+    double windChill = 13.12 + 0.6215 * temperature - 11.37 * (Math.pow(windSpeed, 0.16)) +
+        0.3965 * temperature * (Math.pow(windSpeed, 0.16));
     return windChill;
   }
 }

@@ -17,7 +17,7 @@
         </div>
         <div class="tile is-parent">
             <article class="tile is-child box  has-background-dark">
-                <div class="title is-4 has-text-white">Weather
+                <p class="title is-4 has-text-white">Weather
                     #{if station.readings.size() > 0}
                     #{if station.lastWeatherCondition() == 'Clear'}
                     <i class="fa-solid fa-sun fa-2xl px-1" style="color: #db2928;"></i>
@@ -46,13 +46,15 @@
                     #{else}
                     <i></i>
                     #{/else}
+                </p>
+                <div class="content has-text-white">
+                    ${station.lastWeatherCondition()}
                 </div>
-                <div class="content has-text-white">${station.lastWeatherCondition()}</div>
+                #{/if}
+
                 #{else}
-                <p class="content has-text-danger">Add Weather Code Reading below</p>
-                <i></i>
+                <p class="content has-text-danger" style="font-size: 16px;">Add Weather Code Reading below</p>
                 #{/else}
-              #{/if}
             </article>
         </div>
         <div class="tile is-parent">
@@ -74,9 +76,12 @@
                 <p class="title is-4 has-text-white">Wind
                     <i class="fa-solid fa-wind fa-2xl px-5" style="color: #2eaf4c;"></i></p>
                 #{if station.readings.size() > 0}
-                <p class="content has-text-white">${station.lastWindSpeedBeaufort()} bft<br>${station.lastWindDirection()}
-                    <br>Feels like ${station.lastWindChill()} <br> Min: ${minWindSReading.windSpeed} Km/h <br>
-                    Max: ${maxWindSReading.windSpeed} Km/h </p>
+                <p class="content has-text-white">${station.lastWindSpeedBeaufort()} bft<br>
+                    ${station.lastWindDirection()}<br>
+                    Feels like ${station.lastWindChill()} C<br>
+                    Min: ${minWindSReading.windSpeed} Km/h<br>
+                    Max: ${maxWindSReading.windSpeed} Km/h
+                </p>
                 #{/if}
                 #{else}
                 <p class="content has-text-danger">Add Wind Speed Reading below</p>
@@ -88,8 +93,10 @@
                 <p class="title is-4 has-text-white">Pressure
                     <i class="fa-solid fa-gauge fa-2xl px-4" style="color: #df6a1c;"></i></p>
                 #{if station.readings.size() > 0}
-                <p class="content has-text-white">${station.lastPressure()} hPa<br>
-                    Min: ${minPressReading.pressure} hPa<br>Max: ${maxPressReading.pressure} hPa</p>
+                <p class="content has-text-white">
+                    ${station.lastPressure()} hPa
+                    <br>Min: ${minPressReading.pressure} hPa
+                    <br>Max: ${maxPressReading.pressure} hPa</p>
                 #{/if}
                 #{else}
                 <p class="content has-text-danger"> Add Pressure Reading below</p>

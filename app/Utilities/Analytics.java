@@ -1,5 +1,7 @@
 package Utilities;
+
 import models.Reading;
+
 import java.util.List;
 
 /**
@@ -9,6 +11,7 @@ public class Analytics {
 
   /**
    * Returns Reading with the lowest temperature from a list of readings.
+   *
    * @param readings the list of readings
    * @return the minimum temperature in a list of readings. It's null if empty
    */
@@ -27,6 +30,7 @@ public class Analytics {
 
   /**
    * Returns Reading with the highest temperature from a list of readings.
+   *
    * @param readings the list of readings
    * @return the maximum temperature in a list of readings. It's null if empty
    */
@@ -45,6 +49,7 @@ public class Analytics {
 
   /**
    * Returns Reading with the lowest pressure from a list of readings.
+   *
    * @param readings the list of readings
    * @return the minimum  pressure in a list of readings. It's null if empty
    */
@@ -60,8 +65,10 @@ public class Analytics {
     }
     return minPressReading;
   }
+
   /**
    * Returns Reading with the highest pressure from a list of readings.
+   *
    * @param readings the list of readings
    * @return the maximum pressure in a list of readings. It's null if empty
    */
@@ -77,8 +84,10 @@ public class Analytics {
     }
     return maxPressReading;
   }
+
   /**
    * Returns Reading with the lowest wind speed from a list of readings.
+   *
    * @param readings the list of readings
    * @return the minimum wind speed in a list of readings. It's null if empty
    */
@@ -94,8 +103,10 @@ public class Analytics {
     }
     return minWindSReading;
   }
+
   /**
    * Returns Reading with the highest wind speed from a list of readings.
+   *
    * @param readings the list of readings
    * @return the maximum wind speed in a list of readings. It's null if empty
    */

@@ -9,8 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Member extends Model
-{
+public class Member extends Model {
   public String firstname;
   public String lastname;
   public String email;
@@ -21,6 +20,7 @@ public class Member extends Model
 
   /**
    * Constructor to create a new instance of user
+   *
    * @param firstname first name of the user
    * @param lastname  last name of the user
    * @param email     email of the user
@@ -35,6 +35,7 @@ public class Member extends Model
 
   /**
    * Uses the email to find a user
+   *
    * @param email used for the search
    * @return the user email
    */
@@ -44,6 +45,7 @@ public class Member extends Model
 
   /**
    * Checks if the password is the same the user's password.
+   *
    * @param password password to check
    * @return true if password is the same, false otherwise
    */

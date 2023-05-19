@@ -30,15 +30,18 @@ public class Reading extends Model {
    * @param windSpeed   the wind speed value of the reading
    * @param pressure    the pressure value of the reading
    */
-  public Reading(String name, int code, double temperature, double windSpeed, int pressure) {
+  public Reading(String name, int code, double temperature, double windSpeed, int pressure, String date) {
     this.name = name;
     this.code = code;
     this.temperature = temperature;
     this.windSpeed = windSpeed;
     this.pressure = pressure;
+    this.date = date;
   }
+
   /**
    * Constructor that creates a new Reading with 5 parameters as below:
+   *
    * @param code          the code of the reading
    * @param temperature   the temperature value of the reading
    * @param windSpeed     the wind speed value of the reading
@@ -55,6 +58,7 @@ public class Reading extends Model {
 
   /**
    * Constructor that creates a new Reading with 2 parameters as below:
+   *
    * @param latitude  the latitude coordinate of the reading
    * @param longitude the longitude coordinate of the reading
    */
@@ -62,5 +66,15 @@ public class Reading extends Model {
     this.latitude = latitude;
     this.longitude = longitude;
   }
+
+  public static String parseDateTime(LocalDateTime date) {
+    DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    if (date != null) {
+      return FORMATTER.format(date);
+    } else {
+      return FORMATTER.format(LocalDateTime.now());
+    }
+  }
+
 
 }
