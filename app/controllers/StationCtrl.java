@@ -1,5 +1,8 @@
 package controllers;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import models.Station;
@@ -7,6 +10,8 @@ import models.Reading;
 import play.Logger;
 import play.mvc.Controller;
 import Utilities.Analytics;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * Manages station activities for adding and deleting readings and min max readings
@@ -37,11 +42,12 @@ public class StationCtrl extends Controller {
    */
   public static void addReading(Long id, int code, double temperature, double windSpeed,
                                 double windDirection, int pressure) {
-    Reading reading = new Reading(code, temperature, windSpeed, windDirection, pressure);
-    if (windSpeed < 0 || windSpeed > 117.99) {
-      flash.error("No corresponding Beaufort value");
-      redirect("/stations/" + id);
-    }
+
+    SimpleDateFormat simpleDateFormat = new SimpleDateFormat ("yyyy-MM-dd HH:mm:ss");
+    Date currentDate = new Date();
+    String date = simpleDateFormat.format(currentDate);
+
+    Reading reading = new Reading(code, temperature, windSpeed, windDirection, pressure, date);
     Station station = Station.findById(id);
     station.readings.add(reading);
     station.save();

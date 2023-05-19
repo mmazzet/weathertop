@@ -23,4 +23,9 @@
       </figure>
     </div>
   </div>
+  #{if flash.error}
+  <div class="notification is-danger">
+    ${flash.error}
+  </div>
+  #{/if}
 </section>

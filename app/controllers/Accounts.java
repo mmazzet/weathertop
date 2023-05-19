@@ -46,6 +46,7 @@ public class Accounts extends Controller {
       redirect("/dashboard");
     } else {
       Logger.info("Authentication failed");
+      flash.error("Wrong email or password");
       redirect("/login");
     }
   }

@@ -6,9 +6,6 @@ import play.db.jpa.Model;
 
 import Utilities.Conversions;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-
 @Entity
 public class Reading extends Model {
   public String name;
@@ -30,13 +27,12 @@ public class Reading extends Model {
    * @param windSpeed   the wind speed value of the reading
    * @param pressure    the pressure value of the reading
    */
-  public Reading(String name, int code, double temperature, double windSpeed, int pressure, String date) {
+  public Reading(String name, int code, double temperature, double windSpeed, int pressure) {
     this.name = name;
     this.code = code;
     this.temperature = temperature;
     this.windSpeed = windSpeed;
     this.pressure = pressure;
-    this.date = date;
   }
 
   /**
@@ -47,13 +43,15 @@ public class Reading extends Model {
    * @param windSpeed     the wind speed value of the reading
    * @param windDirection the wind direction value of the reading
    * @param pressure      the pressure value of the reading
+   * @param date          the date the reading is added
    */
-  public Reading(int code, double temperature, double windSpeed, double windDirection, int pressure) {
+  public Reading(int code, double temperature, double windSpeed, double windDirection, int pressure, String date) {
     this.code = code;
     this.temperature = temperature;
     this.windSpeed = windSpeed;
     this.pressure = pressure;
     this.windDirection = windDirection;
+    this.date = date;
   }
 
   /**
@@ -67,14 +65,6 @@ public class Reading extends Model {
     this.longitude = longitude;
   }
 
-  public static String parseDateTime(LocalDateTime date) {
-    DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-    if (date != null) {
-      return FORMATTER.format(date);
-    } else {
-      return FORMATTER.format(LocalDateTime.now());
-    }
-  }
 
 
 }
