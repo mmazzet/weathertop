@@ -1,5 +1,6 @@
-# play-template-1
+# WeatherTop App
 
-This is a sample starter project for this course:
+Final Assignment for courses:
 
 - [Web Development](https://reader.tutors.dev/course/wit-hdip-comp-sci-2023-web-dev-1)
+- [Programming Fundamentals](https://reader.tutors.dev/course/wit-hdip-comp-sci-2023-web-dev-1)

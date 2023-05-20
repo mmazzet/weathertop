@@ -1,110 +1,111 @@
 #{extends 'main.html' /}
 #{set title:'Station' /}
-
 #{menu id:"dashboard"/}
-
 <div class="content box mt-5">
-    <h1 class="title">
-        ${station.name}
-    </h1>
-    <div class="tile is-ancestor">
-        <div class="tile is-parent">
-            <article class="tile is-child box  has-background-dark">
-                <p class="title is-4 has-text-white mr-3">${station.name}
-                    <i class="fa-sharp fa-solid fa-location-pin fa-2xl px-1" style="color: #6436c9;"></i></p>
-                <p class="content has-text-white">Lat: ${station.getLatitude()} <br>Lng: ${station.getLongitude()} </p>
-            </article>
-        </div>
-        <div class="tile is-parent">
-            <article class="tile is-child box  has-background-dark">
-                <p class="title is-4 has-text-white">Weather
-                    #{if station.readings.size() > 0}
-                    #{if station.lastWeatherCondition() == 'Clear'}
-                    <i class="fa-solid fa-sun fa-2xl px-1" style="color: #db2928;"></i>
-                    #{/if}
-                    #{elseif station.lastWeatherCondition() == 'Partial Clouds'}
-                    <i class="fa-solid fa-cloud-sun fa-2xl px-1" style="color: #db2928;"></i>
-                    #{/elseif}
-                    #{elseif station.lastWeatherCondition() == 'Cloudy'}
-                    <i class="fa-solid fa-cloud fa-2xl px-1" style="color: #db2928;"></i>
-                    #{/elseif}
-                    #{elseif station.lastWeatherCondition() == 'Light Showers'}
-                    <i class="fa-solid fa-cloud-sun-rain fa-2xl px-1" style="color: #db2928;"></i>
-                    #{/elseif}
-                    #{elseif station.lastWeatherCondition() == 'Heavy Showers'}
-                    <i class="fa-solid fa-cloud-showers-heavy fa-2xl px-1" style="color: #db2928;"></i>
-                    #{/elseif}
-                    #{elseif station.lastWeatherCondition() == 'Rain'}
-                    <i class="fa-solid fa-cloud-rain fa-2xl px-1" style="color: #db2928;"></i>
-                    #{/elseif}
-                    #{elseif station.lastWeatherCondition() == 'Snow'}
-                    <i class="fas fa-snowflake fa-2xl px-1" style="color: #db2928;"></i>
-                    #{/elseif}
-                    #{elseif station.lastWeatherCondition() == 'Thunder'}
-                    <i class="fas fa-cloud-bolt fa-2xl px-1" style="color: #db2928;"></i>
-                    #{/elseif}
-                    #{else}
-                    <i></i>
-                    #{/else}
-                </p>
-                <div class="content has-text-white">
-                    ${station.lastWeatherCondition()}
-                </div>
-                #{/if}
-
-                #{else}
-                <p class="content has-text-danger" style="font-size: 16px;">Add Weather Code Reading below</p>
-                #{/else}
-            </article>
-        </div>
-        <div class="tile is-parent">
-            <article class="tile is-child box  has-background-dark">
-                <p class="title is-4 has-text-white">Temperature
-                    <i class="fa-solid fa-temperature-low fa-2xl px-0.5" style="color: #2183cd;"></i></p>
-                #{if station.readings.size() > 0}
-                <p class="content has-text-white"> ${station.lastTempF()} F<br>${station.lastTempC()} C<br>
-                    Min: ${minTempReading.temperature} C <br> Max: ${maxTempReading.temperature} C
-                    #{/if}
-                    #{else}
-                <p class="content has-text-danger">Add Temperature Reading below</p>
-                #{/else}
-
-            </article>
-        </div>
-        <div class="tile is-parent">
-            <article class="tile is-child box  has-background-dark">
-                <p class="title is-4 has-text-white">Wind
-                    <i class="fa-solid fa-wind fa-2xl px-5" style="color: #2eaf4c;"></i></p>
-                #{if station.readings.size() > 0}
-                <p class="content has-text-white">${station.lastWindSpeedBeaufort()} bft<br>
-                    ${station.lastWindDirection()}<br>
-                    Feels like ${station.lastWindChill()} C<br>
-                    Min: ${minWindSReading.windSpeed} Km/h<br>
-                    Max: ${maxWindSReading.windSpeed} Km/h
-                </p>
-                #{/if}
-                #{else}
-                <p class="content has-text-danger">Add Wind Speed Reading below</p>
-                #{/else}
-            </article>
-        </div>
-        <div class="tile is-parent">
-            <article class="tile is-child box  has-background-dark">
-                <p class="title is-4 has-text-white">Pressure
-                    <i class="fa-solid fa-gauge fa-2xl px-4" style="color: #df6a1c;"></i></p>
-                #{if station.readings.size() > 0}
-                <p class="content has-text-white">
-                    ${station.lastPressure()} hPa
-                    <br>Min: ${minPressReading.pressure} hPa
-                    <br>Max: ${maxPressReading.pressure} hPa</p>
-                #{/if}
-                #{else}
-                <p class="content has-text-danger"> Add Pressure Reading below</p>
-                #{/else}
-                <span class="icon is-large"></span>
-            </article>
-        </div>
+  <h1 class="title">
+    ${station.name}
+  </h1>
+  <div class="tile is-ancestor">
+    <div class="tile is-parent">
+      <article class="tile is-child box  has-background-dark">
+        <p class="title is-4 has-text-white mr-3">${station.name}
+          <i class="fa-sharp fa-solid fa-location-pin fa-2xl px-1" style="color: #6436c9;"></i>
+        </p>
+        <p class="content has-text-white">Lat: ${station.getLatitude()} <br>Lng: ${station.getLongitude()} </p>
+      </article>
     </div>
-    #{listreadings station:station /}
-    #{addreading station:station /}
+    <div class="tile is-parent">
+      <article class="tile is-child box  has-background-dark">
+        <p class="title is-4 has-text-white">Weather
+          #{if station.readings.size() > 0}
+            #{if station.lastWeatherCondition() == 'Clear'}
+            <i class="fa-solid fa-sun fa-2xl px-1" style="color: #db2928;"></i>
+            #{/if}
+            #{elseif station.lastWeatherCondition() == 'Partial Clouds'}
+            <i class="fa-solid fa-cloud-sun fa-2xl px-1" style="color: #db2928;"></i>
+            #{/elseif}
+            #{elseif station.lastWeatherCondition() == 'Cloudy'}
+            <i class="fa-solid fa-cloud fa-2xl px-1" style="color: #db2928;"></i>
+            #{/elseif}
+            #{elseif station.lastWeatherCondition() == 'Light Showers'}
+            <i class="fa-solid fa-cloud-sun-rain fa-2xl px-1" style="color: #db2928;"></i>
+            #{/elseif}
+            #{elseif station.lastWeatherCondition() == 'Heavy Showers'}
+            <i class="fa-solid fa-cloud-showers-heavy fa-2xl px-1" style="color: #db2928;"></i>
+            #{/elseif}
+            #{elseif station.lastWeatherCondition() == 'Rain'}
+            <i class="fa-solid fa-cloud-rain fa-2xl px-1" style="color: #db2928;"></i>
+            #{/elseif}
+            #{elseif station.lastWeatherCondition() == 'Snow'}
+            <i class="fas fa-snowflake fa-2xl px-1" style="color: #db2928;"></i>
+            #{/elseif}
+            #{elseif station.lastWeatherCondition() == 'Thunder'}
+            <i class="fas fa-cloud-bolt fa-2xl px-1" style="color: #db2928;"></i>
+            #{/elseif}
+            #{else}
+            <i></i>
+            #{/else}
+        </p>
+            <div class="content has-text-white">
+                ${station.lastWeatherCondition()}
+            </div>
+            #{/if}
+            #{else}
+            <p class="content has-text-danger" style="font-size: 16px;">Add Weather Code Reading below</p>
+            #{/else}
+      </article>
+    </div>
+    <div class="tile is-parent">
+      <article class="tile is-child box  has-background-dark">
+        <p class="title is-4 has-text-white">Temperature
+          <i class="fa-solid fa-temperature-low fa-2xl px-0.5" style="color: #2183cd;"></i>
+        </p>
+        #{if station.readings.size() > 0}
+        <p class="content has-text-white"> ${station.lastTempF()} F<br>${station.lastTempC()} C<br>
+            Min: ${minTempReading.temperature} C <br> Max: ${maxTempReading.temperature} C
+            #{/if}
+            #{else}
+        <p class="content has-text-danger">Add Temperature Reading below</p>
+        #{/else}
+      </article>
+    </div>
+    <div class="tile is-parent">
+      <article class="tile is-child box  has-background-dark">
+        <p class="title is-4 has-text-white">Wind
+            <i class="fa-solid fa-wind fa-2xl px-5" style="color: #2eaf4c;"></i>
+        </p>
+        #{if station.readings.size() > 0}
+        <p class="content has-text-white">${station.lastWindSpeedBeaufort()} bft<br>
+            ${station.lastWindDirection()}<br>
+            Feels like ${station.lastWindChill()} C<br>
+            Min: ${minWindSReading.windSpeed} Km/h<br>
+            Max: ${maxWindSReading.windSpeed} Km/h
+        </p>
+        #{/if}
+        #{else}
+        <p class="content has-text-danger">Add Wind Speed Reading below</p>
+        #{/else}
+      </article>
+    </div>
+    <div class="tile is-parent">
+      <article class="tile is-child box  has-background-dark">
+        <p class="title is-4 has-text-white">Pressure
+                <i class="fa-solid fa-gauge fa-2xl px-4" style="color: #df6a1c;"></i>
+        </p>
+        #{if station.readings.size() > 0}
+        <p class="content has-text-white">
+        ${station.lastPressure()} hPa
+        <br>Min: ${minPressReading.pressure} hPa
+        <br>Max: ${maxPressReading.pressure} hPa
+        </p>
+        #{/if}
+        #{else}
+        <p class="content has-text-danger"> Add Pressure Reading below</p>
+        #{/else}
+        <span class="icon is-large"></span>
+      </article>
+    </div>
+  </div>
+  #{listreadings station:station /}
+  #{addreading station:station /}
 </div>

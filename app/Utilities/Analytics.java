@@ -1,7 +1,6 @@
 package Utilities;
 
 import models.Reading;
-
 import java.util.List;
 
 /**
@@ -122,6 +121,5 @@ public class Analytics {
     }
     return maxWindSReading;
   }
-
 
 }
