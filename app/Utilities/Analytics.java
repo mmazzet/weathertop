@@ -121,5 +121,4 @@ public class Analytics {
     }
     return maxWindSReading;
   }
-
 }
