@@ -10,6 +10,7 @@
 ---
 
 ### :woman_technologist: About Me :
+
 I am a Computer Science student <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30">
 
 - :telescope: I’m currently working as a Localisation Project Manager
@@ -21,9 +22,9 @@ I am a Computer Science student <img src="https://media.giphy.com/media/WUlplcMp
 
 
 
-### Project Title: WeatherTop
+### :sun_behind_small_cloud: Project Title: WeatherTop
 
-### Project Description
+### :bookmark_tabs: Project Description
 
 WeatherTop is a web app that allows registered members to submit real-time weather reports. 
 The application facilitates submission of data and provides weather analytics for each station.
@@ -35,6 +36,7 @@ The application facilitates submission of data and provides weather analytics fo
 ---
 
 ### :hammer_and_wrench: Languages and Tools used for this project:
+
 <div>
   <img src="https://github.com/devicons/devicon/blob/master/icons/java/java-original-wordmark.svg" title="Java" alt="Java" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/bulma/bulma-plain.svg" title="Bulma" alt="Bulma" width="40" height="40"/>&nbsp;
@@ -47,7 +49,7 @@ The application facilitates submission of data and provides weather analytics fo
 
 ---
 
-### WeatherTop screnshots
+### :pencil: WeatherTop screnshots
 
 Start page:
 ![image](https://github.com/mmazzet/weathertop/assets/120139950/4d36e985-26ad-4f04-9415-167a608da1cc)
