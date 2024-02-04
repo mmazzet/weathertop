@@ -49,7 +49,7 @@ The application facilitates submission of data and provides weather analytics fo
 
 ---
 
-### :pencil: WeatherTop screnshots
+### :pencil: WeatherTop Screenshots
 
 Start page:
 ![image](https://github.com/mmazzet/weathertop/assets/120139950/4d36e985-26ad-4f04-9415-167a608da1cc)
