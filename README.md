@@ -1,6 +1,3 @@
-# WeatherTop App
-
-Final Assignment for courses:
-
-- [Web Development](https://reader.tutors.dev/course/wit-hdip-comp-sci-2023-web-dev-1)
-- [Programming Fundamentals](https://reader.tutors.dev/course/wit-hdip-comp-sci-2023-web-dev-1)
+<div id="header" align="center">
+  <img src="https://media.giphy.com/media/WIQ0N0OUvei1OW1h9Z/giphy.gif" width="100"/>
+</div>
